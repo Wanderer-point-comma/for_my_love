@@ -31,15 +31,17 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
 h1{font-family:Caveat,cursive;font-weight:400;font-size:clamp(49px,8vw,105px);line-height:.87;letter-spacing:-.025em;color:var(--red2);margin:0 auto 22px;max-width:900px;text-shadow:0 0 35px #7c111522;transform:rotate(-2deg)}
 h1 span{display:block;margin-top:16px}
 .heart{font-family:Caveat,cursive;color:var(--red2);font-size:42px;line-height:1;margin:16px 0}
-.couple{height:190px;width:min(500px,80%);margin:16px auto 0;position:relative}
-.couple:before{content:"";position:absolute;left:0;right:0;bottom:0;height:70px;background:linear-gradient(180deg,transparent,#090909);border-bottom:1px solid #3c2728}
-.person{position:absolute;bottom:0;background:linear-gradient(90deg,#030303,#0c0b0b 60%,#030303);filter:drop-shadow(0 0 18px #000)}
-.person.one{left:30%;width:21%;height:155px;clip-path:polygon(36% 0,61% 0,76% 14%,100% 100%,0 100%,18% 15%)}
-.person.two{left:48%;width:24%;height:130px;clip-path:polygon(40% 0,63% 0,78% 17%,100% 100%,0 100%,18% 16%)}
-.head{position:absolute;bottom:111px;width:50px;height:57px;border-radius:48% 48% 43% 43%;background:#080808;border:1px solid #170f10}
-.head.one{left:37%}.head.two{left:54%;bottom:96px;width:47px;height:54px}
-.city{position:absolute;bottom:0;left:0;right:0;height:68px;opacity:.55;background:linear-gradient(0deg,#090909,transparent),repeating-linear-gradient(90deg,transparent 0 12px,#100f0f 12px 24px,transparent 24px 32px)}
-.city:after{content:"";position:absolute;inset:9px 0 0;background:repeating-linear-gradient(90deg,transparent 0 17px,#8e77752a 17px 19px,transparent 19px 29px);mask-image:linear-gradient(180deg,#000,transparent)}
+.cosmic-scene{height:170px;width:min(520px,82%);margin:18px auto 0;position:relative;display:grid;place-items:center;isolation:isolate}
+.cosmic-scene:before{content:"";position:absolute;left:5%;right:5%;bottom:18px;height:42px;background:radial-gradient(ellipse at 50% 50%,#74141c30,transparent 68%);filter:blur(15px);z-index:-1}
+.orbit{position:absolute;left:50%;top:48%;width:clamp(230px,42vw,430px);height:76px;border:1px solid #b83a4545;border-radius:50%;transform:translate(-50%,-50%) rotate(-12deg);box-shadow:0 0 22px #8c202010,inset 0 0 18px #8c202010}
+.orbit-two{width:clamp(180px,34vw,350px);height:112px;transform:translate(-50%,-50%) rotate(24deg);border-color:#eee0e012}
+.planet{display:none}
+.planet-glow{display:none}
+.couple-art{position:absolute;inset:0;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 12px #000);opacity:.94}
+/* Abstract moon-and-constellation artwork; no human silhouettes */
+.cosmic-moon{filter:drop-shadow(0 0 14px #b52e3a28)}
+.cosmic-star{fill:#eee5e5;opacity:.78}
+.cosmic-line{fill:none;stroke:#b52e3a;stroke-opacity:.42;stroke-width:1.2}
 .hero-bottom{position:absolute;bottom:20px;left:0;right:0;display:flex;justify-content:flex-end;align-items:center;color:var(--red2);font-size:9px;letter-spacing:.16em;text-transform:uppercase}
 .hero-signoff{display:inline-flex;align-items:center;justify-content:flex-end;gap:9px;white-space:nowrap;line-height:1}
 .hero-signoff-heart{display:inline-block;font-size:13px;line-height:1;transform:translateY(-.5px);flex:0 0 auto}
@@ -115,7 +117,7 @@ footer{border-top:1px solid #ffffff10;padding:20px 0;display:flex;justify-conten
 .volume-value{font-size:10px;letter-spacing:.08em;min-width:29px;text-align:right;color:#b6a8aa}
 @media(max-width:620px){.music-panel{padding:22px;gap:20px}.music-aside .script{font-size:34px}.track-trigger{gap:12px;align-items:center;padding-top:20px}.track-play{flex-basis:36px;width:36px;height:36px}.track-play svg{width:13px;height:13px}.track-title{font-size:clamp(27px,7vw,34px);flex:1}.volume-row{padding-left:48px;gap:10px}.music-panel:after{width:220px;right:-20%;top:65%;opacity:.16}}
 @media(max-width:900px){.cards{grid-template-columns:repeat(3,1fr)}.card{height:220px}.side-note{display:none}.hero{min-height:590px}}
-@media(max-width:620px){.wrap{width:calc(100% - 28px)}header{height:65px}.logo{font-size:27px}.header-right{gap:10px;font-size:8px}.sound{font-size:8px;padding:0}.hero{min-height:540px}.hero-content{padding-top:20px}h1{font-size:clamp(48px,13vw,75px)}.couple{height:150px}.person.one{height:125px}.person.two{height:105px}.head.one{bottom:89px;width:41px;height:48px}.head.two{bottom:79px;width:39px;height:44px}.hero-bottom{font-size:7px}.section-top{display:block}.section-top p{margin-top:15px}.cards{grid-template-columns:repeat(2,1fr);gap:9px}.card{height:205px;padding:13px}.card-title{font-size:29px}.message-panel{grid-template-columns:1fr}.message-aside{border-right:0;border-bottom:1px solid #332729;min-height:0;padding:22px;gap:10px}.message-aside .script{font-size:34px;line-height:1.08}.message-main{padding:24px}.memory-list{grid-template-columns:1fr;gap:25px}.content{padding:48px 0!important}.last{padding:62px 0 55px}footer{flex-direction:column;font-size:8px}}
+@media(max-width:620px){.wrap{width:calc(100% - 28px)}header{height:65px}.logo{font-size:27px}.header-right{gap:10px;font-size:8px}.sound{font-size:8px;padding:0}.hero{min-height:540px}.hero-content{padding-top:20px}h1{font-size:clamp(48px,13vw,75px)}.couple{height:150px}.hero-bottom{font-size:7px}.section-top{display:block}.section-top p{margin-top:15px}.cards{grid-template-columns:repeat(2,1fr);gap:9px}.card{height:205px;padding:13px}.card-title{font-size:29px}.message-panel{grid-template-columns:1fr}.message-aside{border-right:0;border-bottom:1px solid #332729;min-height:0;padding:22px;gap:10px}.message-aside .script{font-size:34px;line-height:1.08}.message-main{padding:24px}.memory-list{grid-template-columns:1fr;gap:25px}.content{padding:48px 0!important}.last{padding:62px 0 55px}footer{flex-direction:column;font-size:8px}}
 
 /* Personal-message section: quiet starfield and a barely visible heart-shaped nebula */
 .message-section{position:relative;isolation:isolate;overflow:hidden}
@@ -200,8 +202,27 @@ section.content{padding:clamp(54px,7vw,92px) 0}
       <div class="eyebrow">наш маленький космос</div>
       <h1>Я хочу быть<br><span>с тобой одним целым</span></h1>
       <div class="heart">♡</div>
-      <div class="couple" aria-label="Силуэты двух людей, сидящих рядом и смотрящих на ночной город">
-        <div class="city"></div><div class="head one"></div><div class="head two"></div><div class="person one"></div><div class="person two"></div>
+      <div class="cosmic-scene" aria-hidden="true">
+        <span class="orbit orbit-one"></span><span class="orbit orbit-two"></span>
+        <span class="planet"></span><span class="planet-glow"></span>
+        <svg class="couple-art" viewBox="0 0 520 180" role="presentation" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="moonFill" cx="32%" cy="27%" r="76%"><stop stop-color="#d65b65"/><stop offset=".55" stop-color="#7c2029"/><stop offset="1" stop-color="#18080b"/></radialGradient>
+            <linearGradient id="moonEdge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e66a73" stop-opacity=".8"/><stop offset="1" stop-color="#64141b" stop-opacity=".1"/></linearGradient>
+          </defs>
+          <g class="cosmic-moon">
+            <circle cx="260" cy="86" r="34" fill="url(#moonFill)" stroke="url(#moonEdge)" stroke-width="1.2"/>
+            <circle cx="276" cy="74" r="31" fill="#050505"/>
+            <path d="M237 112 Q258 129 281 109" fill="none" stroke="#d64a56" stroke-opacity=".28" stroke-width="1"/>
+          </g>
+          <path class="cosmic-line" d="M64 127 Q260 22 456 127"/>
+          <path class="cosmic-line" d="M104 143 Q260 67 416 143" stroke-opacity=".22"/>
+          <path d="M84 42 L90 54 L102 60 L90 65 L84 78 L79 65 L67 60 L79 54Z" fill="#e8dfe0" opacity=".7"/>
+          <path d="M425 38 L429 47 L438 51 L429 55 L425 64 L421 55 L412 51 L421 47Z" fill="#b52e3a" opacity=".85"/>
+          <circle class="cosmic-star" cx="151" cy="80" r="2.1"/><circle class="cosmic-star" cx="366" cy="93" r="1.8"/>
+          <circle class="cosmic-star" cx="196" cy="31" r="1.4"/><circle class="cosmic-star" cx="329" cy="139" r="1.5"/>
+          <circle cx="260" cy="27" r="2" fill="#e34a56" opacity=".8"/><circle cx="260" cy="145" r="1.5" fill="#eee5e5" opacity=".65"/>
+        </svg>
       </div>
     </div>
     <div class="hero-bottom"><span class="hero-signoff">ТЫ ВСЕГДА В МОИХ МЫСЛЯХ <span class="hero-signoff-heart" aria-hidden="true">♡</span></span></div>
@@ -259,7 +280,7 @@ section.content{padding:clamp(54px,7vw,92px) 0}
   </section>
 
   <section class="content" id="moments">
-    <div class="section-top"><div><div class="eyebrow">05 / моменты</div><h2>То, что хочется<br>оставить с нами.</h2></div><p>Позже здесь можно разместить ваши фотографии. Сейчас это место оставлено для воспоминаний, которые появятся со временем.</p></div>
+    <div class="section-top"><div><div class="eyebrow">05 / моменты</div><h2>То, что хочется<br>оставить с нами.</h2></div></div>
     <div class="memory-list">
       <article class="memory"><b>КАДР 01</b><h3>Твой смех</h3><p>Есть звуки, которые делают даже самый плохой день лучше.</p></article>
       <article class="memory"><b>КАДР 02</b><h3>Наши вечера</h3><p>Когда не нужно ничего придумывать — просто хорошо рядом.</p></article>
