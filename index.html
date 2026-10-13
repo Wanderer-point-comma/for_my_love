@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="Наше маленькое место во вселенной. Я хочу быть с тобой одним целым.">
+<title>Одним целым ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap');
+:root{--bg:#050505;--red:#b52e3a;--red2:#e34a56;--white:#eee9e9;--muted:#8d8588;--line:#33282a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Manrope,Arial,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background:radial-gradient(ellipse at 80% 38%,#3a0b0d33,transparent 36%),radial-gradient(ellipse at 12% 75%,#3b0b0c22,transparent 28%),#050505}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.wrap{width:min(1240px,calc(100% - 48px));margin:auto}
+header{height:76px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:2}
+.logo{font-family:Caveat,cursive;color:var(--red2);font-size:31px;transform:rotate(-5deg);display:inline-block}
+.header-right{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:10px;letter-spacing:.15em;text-transform:uppercase}
+.sound{border:0;background:none;color:var(--red2);cursor:pointer;letter-spacing:.12em;font-size:10px}
+.hero{position:relative;min-height:620px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;border-bottom:1px solid #ffffff08}
+.sky{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,.08) 52%,rgba(5,0,1,.48) 100%),url("assets/starfield.png") center 42%/cover no-repeat;opacity:.96;transform:scale(1.015)}
+.nebula{position:absolute;left:-10%;right:-10%;bottom:0;height:48%;background:radial-gradient(ellipse at 14% 95%,#6b151a5c,transparent 24%),radial-gradient(ellipse at 77% 77%,#68121970,transparent 28%);filter:blur(14px)}
+.shooting{position:absolute;top:12%;right:19%;width:145px;height:1px;background:linear-gradient(90deg,transparent,#f5e8e8);transform:rotate(27deg);box-shadow:0 0 7px #fff7}
+.hero-content{position:relative;z-index:1;width:100%;padding:50px 0 0}
+.side-note{position:absolute;top:42%;font-family:Caveat,cursive;color:#a59b9d;font-size:19px;line-height:1.1;transform:rotate(-8deg);text-align:left}
+.side-note.left{left:1%}.side-note.right{right:1%;transform:rotate(7deg)}
+.side-note span{display:block;color:var(--red2);font-size:23px;margin-top:7px}
+h1{font-family:Caveat,cursive;font-weight:400;font-size:clamp(49px,8vw,105px);line-height:.87;letter-spacing:-.025em;color:var(--red2);margin:0 auto 22px;max-width:900px;text-shadow:0 0 35px #7c111522;transform:rotate(-2deg)}
+h1 span{display:block;margin-top:16px}
+.heart{font-family:Caveat,cursive;color:var(--red2);font-size:42px;line-height:1;margin:16px 0}
+.couple{height:190px;width:min(500px,80%);margin:16px auto 0;position:relative}
+.couple:before{content:"";position:absolute;left:0;right:0;bottom:0;height:70px;background:linear-gradient(180deg,transparent,#090909);border-bottom:1px solid #3c2728}
+.person{position:absolute;bottom:0;background:linear-gradient(90deg,#030303,#0c0b0b 60%,#030303);filter:drop-shadow(0 0 18px #000)}
+.person.one{left:30%;width:21%;height:155px;clip-path:polygon(36% 0,61% 0,76% 14%,100% 100%,0 100%,18% 15%)}
+.person.two{left:48%;width:24%;height:130px;clip-path:polygon(40% 0,63% 0,78% 17%,100% 100%,0 100%,18% 16%)}
+.head{position:absolute;bottom:111px;width:50px;height:57px;border-radius:48% 48% 43% 43%;background:#080808;border:1px solid #170f10}
+.head.one{left:37%}.head.two{left:54%;bottom:96px;width:47px;height:54px}
+.city{position:absolute;bottom:0;left:0;right:0;height:68px;opacity:.55;background:linear-gradient(0deg,#090909,transparent),repeating-linear-gradient(90deg,transparent 0 12px,#100f0f 12px 24px,transparent 24px 32px)}
+.city:after{content:"";position:absolute;inset:9px 0 0;background:repeating-linear-gradient(90deg,transparent 0 17px,#8e77752a 17px 19px,transparent 19px 29px);mask-image:linear-gradient(180deg,#000,transparent)}
+.hero-bottom{position:absolute;bottom:20px;left:0;right:0;display:flex;justify-content:flex-end;align-items:center;color:var(--red2);font-size:9px;letter-spacing:.16em;text-transform:uppercase}
+.hero-signoff{display:inline-flex;align-items:center;justify-content:flex-end;gap:9px;white-space:nowrap;line-height:1}
+.hero-signoff-heart{display:inline-block;font-size:13px;line-height:1;transform:translateY(-.5px);flex:0 0 auto}
+section.content{padding:64px 0;border-bottom:1px solid #ffffff0c}
+.section-top{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:25px}
+.eyebrow{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--red2)}
+h2{font-size:clamp(27px,4vw,42px);font-weight:500;letter-spacing:-.06em;line-height:1.15;margin:12px 0 0}
+.section-top p{font-size:12px;line-height:1.9;color:var(--muted);max-width:390px;margin:0}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}
+.card{height:250px;position:relative;overflow:hidden;border:1px solid #393031;background:#080808;display:flex;flex-direction:column;justify-content:flex-end;padding:17px;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-5px);border-color:#873038}
+.card-bg{position:absolute;inset:0;background:radial-gradient(1px 1px at 20% 20%,#fff8,transparent 2px),radial-gradient(1px 1px at 70% 15%,#fff7,transparent 2px),linear-gradient(180deg,#111 0%,#080808 80%)}
+.card:nth-child(1) .card-bg{background:linear-gradient(180deg,#09090970,#050505),radial-gradient(ellipse at 50% 40%,#514344,#090909 68%)}
+.card:nth-child(2) .card-bg{background:radial-gradient(ellipse at 50% 32%,#4c3c3c,#0a0909 50%),linear-gradient(#171313,#050505)}
+.card:nth-child(3) .card-bg{background:radial-gradient(1px 1px at 40% 20%,#fff,transparent 2px),radial-gradient(1px 1px at 70% 35%,#fff,transparent 2px),#050505}
+.card:nth-child(4) .card-bg{background:linear-gradient(180deg,#1a1515,#060606),radial-gradient(ellipse at 60% 45%,#403131,transparent)}
+.card:nth-child(5) .card-bg{background:radial-gradient(circle at 50% 30%,#b9a9a9 0 2px,transparent 5px),linear-gradient(#121010,#050505)}
+.card-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,#000 100%)}
+
+/* Cinematic photo panels for the five main navigation cards */
+.card-bg{background-size:cover;background-position:center 38%;transition:transform .65s ease,filter .4s ease;filter:saturate(.82)}
+.card:nth-child(1) .card-bg{background:linear-gradient(180deg,rgba(5,5,5,.12) 0%,rgba(5,5,5,.14) 30%,rgba(5,5,5,.92) 100%),url("assets/card-places.jpg") center 42%/cover no-repeat}
+.card:nth-child(2) .card-bg{background:linear-gradient(180deg,rgba(5,5,5,.12) 0%,rgba(5,5,5,.18) 30%,rgba(5,5,5,.94) 100%),url("assets/card-words.jpg") center 42%/cover no-repeat}
+.card:nth-child(3) .card-bg{background:linear-gradient(180deg,rgba(5,5,5,.08) 0%,rgba(5,5,5,.18) 30%,rgba(5,5,5,.95) 100%),url("assets/card-music.jpg") center 42%/cover no-repeat}
+.card:nth-child(4) .card-bg{background:linear-gradient(180deg,rgba(5,5,5,.12) 0%,rgba(5,5,5,.18) 30%,rgba(5,5,5,.95) 100%),url("assets/card-memory.jpg") center 42%/cover no-repeat}
+.card:nth-child(5) .card-bg{background:linear-gradient(180deg,rgba(5,5,5,.10) 0%,rgba(5,5,5,.16) 30%,rgba(5,5,5,.94) 100%),url("assets/card-always.jpg") center 42%/cover no-repeat}
+.card-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02) 0%,rgba(0,0,0,.04) 28%,rgba(0,0,0,.65) 100%);pointer-events:none}
+.card:hover .card-bg{transform:scale(1.045);filter:saturate(1.02)}
+@media(max-width:700px){.card-bg{background-position:center 35%}.card:nth-child(n) .card-bg{background-position:center 38%}}
+
+.card-number{position:absolute;top:14px;left:15px;font-size:9px;letter-spacing:.12em;color:#b5a8a8}
+.card-title{position:relative;font-family:Caveat,cursive;color:var(--red2);font-size:32px;line-height:.92;transform:rotate(-4deg);margin-bottom:13px}
+.card-desc{position:relative;font-size:9px;line-height:1.7;color:#a19899;text-transform:uppercase;letter-spacing:.06em;max-width:150px}
+.card-arrow{position:absolute;right:15px;bottom:14px;color:var(--red2);font-size:20px}
+.message-panel{display:grid;grid-template-columns:.8fr 1.2fr;border:1px solid #3b2b2d;background:linear-gradient(120deg,#0b0909,#080808);min-height:280px}
+.message-aside{padding:32px;border-right:1px solid #332729;display:flex;flex-direction:column;justify-content:flex-start;gap:20px}
+.message-aside .script{font-family:Caveat,cursive;color:var(--red2);font-size:42px;line-height:1.08;display:block}
+.message-aside small{display:block;font-size:9px;line-height:1.5;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+.message-main{padding:32px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.message-main blockquote{font-family:Caveat,cursive;font-size:clamp(29px,4vw,48px);line-height:1.05;margin:0 0 22px;color:#eee4e4}
+.message-main blockquote span{color:var(--red2)}
+button.red{border:1px solid #8c3038;background:transparent;color:var(--red2);padding:12px 17px;cursor:pointer;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+button.red:hover{background:#8c30381a}
+.memory-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.memory{border-top:1px solid #733037;padding:18px 0 0}
+.memory b{font-size:9px;letter-spacing:.15em;color:var(--red2)}
+.memory h3{font-family:Caveat,cursive;font-size:28px;font-weight:400;line-height:1.15;margin:15px 0 14px}
+.memory p{font-size:11px;line-height:1.8;color:var(--muted);margin:0}
+.last{text-align:center;padding:80px 0 70px}
+.last h2{font-family:Caveat,cursive;color:var(--red2);font-size:clamp(43px,7vw,75px);font-weight:400;transform:rotate(-2deg)}
+.last p{max-width:460px;margin:20px auto 25px;font-size:12px;line-height:1.9;color:var(--muted)}
+footer{border-top:1px solid #ffffff10;padding:20px 0;display:flex;justify-content:space-between;gap:15px;font-size:9px;color:#75696b;letter-spacing:.12em;text-transform:uppercase}
+#musicStatus{color:var(--red2)}
+.music-panel{display:flex;flex-direction:column;min-height:0;max-width:760px;padding:26px;gap:26px;border:1px solid #3b2b2d;background:linear-gradient(120deg,#0b0909,#080808)}
+.music-aside{border:0;padding:0;gap:8px}
+.music-aside .script{font-size:40px;line-height:1.05}
+.music-aside .script span{color:var(--red2)}
+.track-trigger{display:flex;align-items:center;gap:17px;width:100%;padding:20px 0 2px;border:0;border-top:1px solid #332729;background:transparent;color:var(--white);text-align:left;cursor:pointer}
+.track-play{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border:1px solid #873038;border-radius:50%;color:var(--red2);font-size:14px;padding-left:2px}
+.track-title{font-family:Caveat,cursive;font-size:clamp(27px,4vw,43px);line-height:1.08}
+.track-title span{color:var(--red2)}
+.track-state{margin-left:auto;flex:0 0 auto;max-width:120px;color:var(--muted);font-size:8px;line-height:1.6;letter-spacing:.12em;text-align:right}
+.track-trigger:hover .track-title{color:#fff}
+.track-trigger:focus-visible{outline:1px solid var(--red2);outline-offset:5px}
+@media(max-width:620px){.music-panel{padding:22px;gap:22px}.music-aside .script{font-size:34px}.track-trigger{gap:12px;align-items:flex-start;flex-wrap:wrap}.track-play{flex-basis:36px;width:36px;height:36px}.track-title{font-size:31px;flex:1}.track-state{margin-left:48px;max-width:none;text-align:left}}
+@media(max-width:900px){.cards{grid-template-columns:repeat(3,1fr)}.card{height:220px}.side-note{display:none}.hero{min-height:590px}}
+@media(max-width:620px){.wrap{width:calc(100% - 28px)}header{height:65px}.logo{font-size:27px}.header-right{gap:10px;font-size:8px}.sound{font-size:8px;padding:0}.hero{min-height:540px}.hero-content{padding-top:20px}h1{font-size:clamp(48px,13vw,75px)}.couple{height:150px}.person.one{height:125px}.person.two{height:105px}.head.one{bottom:89px;width:41px;height:48px}.head.two{bottom:79px;width:39px;height:44px}.hero-bottom{font-size:7px}.section-top{display:block}.section-top p{margin-top:15px}.cards{grid-template-columns:repeat(2,1fr);gap:9px}.card{height:205px;padding:13px}.card-title{font-size:29px}.message-panel{grid-template-columns:1fr}.message-aside{border-right:0;border-bottom:1px solid #332729;min-height:0;padding:22px;gap:10px}.message-aside .script{font-size:34px;line-height:1.08}.message-main{padding:24px}.memory-list{grid-template-columns:1fr;gap:25px}.content{padding:48px 0!important}.last{padding:62px 0 55px}footer{flex-direction:column;font-size:8px}}
+/* Responsive layout refinements: phone, tablet and desktop */
+.wrap{width:min(1180px,calc(100% - 64px))}
+section.content{padding:clamp(54px,7vw,92px) 0}
+.section-top{align-items:flex-end;margin-bottom:clamp(24px,3vw,38px)}
+.section-top>div{min-width:0}
+.section-top p{max-width:430px;font-size:clamp(13px,1.15vw,16px)}
+.cards{grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(10px,1.4vw,18px)}
+.card{min-width:0;height:clamp(220px,23vw,300px);padding:clamp(14px,1.5vw,22px)}
+.card-title{font-size:clamp(29px,2.7vw,39px);overflow-wrap:anywhere}
+.card-desc{font-size:clamp(9px,.8vw,11px);max-width:calc(100% - 8px)}
+.card-arrow{right:13px;bottom:12px}
+.message-panel{min-width:0}
+.message-aside,.message-main{min-width:0}
+.message-main blockquote{overflow-wrap:anywhere}
+.memory-list{align-items:stretch;gap:clamp(16px,2.5vw,30px)}
+.memory{min-width:0}
+.memory h3{overflow-wrap:anywhere}
+.music-panel{width:100%;max-width:900px;margin-inline:auto;padding:clamp(22px,4vw,42px);gap:clamp(20px,3vw,34px)}
+.music-aside .script{font-size:clamp(34px,4vw,48px)}
+.track-trigger{gap:clamp(12px,2vw,22px);padding:clamp(20px,3vw,30px) 0 4px;min-width:0}
+.track-title{overflow-wrap:anywhere}
+.track-state{font-size:9px;max-width:150px}
+.last .red{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:12px 18px;border:1px solid #8c3038;color:var(--red2);font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.last .red:hover{background:#8c30381a}
+@media(min-width:1500px){.wrap{width:min(1240px,calc(100% - 100px))}.hero{min-height:700px}.card{height:300px}}
+@media(max-width:1050px){.wrap{width:calc(100% - 48px)}.cards{grid-template-columns:repeat(3,minmax(0,1fr))}.card{height:245px}.card-title{font-size:clamp(30px,3.5vw,40px)}.section-top p{max-width:360px}.hero{min-height:590px}}
+@media(max-width:700px){.wrap{width:calc(100% - 32px)}header{height:64px}.header-right{gap:10px}.header-right>span{display:none}.hero{min-height:540px}.hero-content{padding:28px 0 30px}h1{font-size:clamp(45px,11.5vw,72px);line-height:.96;max-width:100%;padding-inline:4px}h1 span{margin-top:12px}.couple{width:min(420px,86%);height:145px}.hero-bottom{font-size:7px;letter-spacing:.1em}.hero-signoff{gap:6px}.hero-signoff-heart{font-size:12px}.section-top{display:flex;flex-direction:column;align-items:flex-start;gap:14px}.section-top p{max-width:unset;margin:0;font-size:14px;line-height:1.8}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{height:clamp(190px,48vw,245px);padding:13px}.card-title{font-size:clamp(27px,7vw,35px);margin-bottom:10px}.card-desc{font-size:9px;line-height:1.65;max-width:calc(100% - 4px);padding-right:8px}.card-arrow{font-size:20px;right:10px;bottom:9px}.message-panel{grid-template-columns:1fr}.message-aside{border-right:0;border-bottom:1px solid #332729;padding:22px;gap:9px}.message-aside .script{font-size:clamp(32px,8vw,38px);line-height:1.08}.message-main{padding:24px 22px}.message-main blockquote{font-size:clamp(30px,7.6vw,42px);line-height:1.12;margin:0}.memory-list{grid-template-columns:1fr;gap:25px}.memory{padding-top:17px}.memory h3{font-size:30px;margin:12px 0 10px}.memory p{font-size:13px;line-height:1.8}.music-panel{padding:20px;gap:18px}.music-aside .script{font-size:34px}.track-trigger{display:grid;grid-template-columns:38px minmax(0,1fr);align-items:center;gap:12px;padding-top:18px}.track-play{width:36px;height:36px;flex-basis:36px}.track-title{font-size:clamp(27px,7vw,34px);line-height:1.12}.track-state{grid-column:2;margin:0;max-width:none;text-align:left;font-size:8px}.last{padding:58px 0 48px}.last h2{line-height:1.02}.last p{font-size:13px;line-height:1.85}footer{flex-direction:column;gap:9px;padding:18px 0}}
+@media(max-width:380px){.wrap{width:calc(100% - 24px)}.logo{font-size:24px}.sound{font-size:7px;letter-spacing:.06em}.hero{min-height:510px}h1{font-size:clamp(40px,11vw,48px)}.cards{gap:8px}.card{height:190px;padding:10px}.card-number{left:10px;font-size:8px}.card-title{font-size:27px}.card-desc{font-size:8px}.card-arrow{right:8px;bottom:7px}.message-main{padding:21px 17px}.music-panel{padding:17px}.track-title{font-size:26px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a href="#" class="logo">Pink Phloyd ♡</a>
+  <div class="header-right"><span>private universe</span><button class="sound" id="musicBtn" type="button" aria-label="Перейти к музыкальному разделу и включить трек">♫ <span id="musicStatus">ВКЛЮЧИТЬ МУЗЫКУ</span></button></div>
+</header>
+<main>
+  <section class="hero" id="top">
+    <div class="sky"></div><div class="nebula"></div><div class="shooting"></div>
+    <div class="side-note left">ты<br>мой покой<br>в любом<br>шуме<span>♡</span></div>
+    <div class="side-note right">где бы ты<br>ни была<br>я рядом<span>♡</span></div>
+    <div class="hero-content">
+      <div class="eyebrow">наш маленький космос</div>
+      <h1>Я хочу быть<br><span>с тобой одним целым</span></h1>
+      <div class="heart">♡</div>
+      <div class="couple" aria-label="Силуэты двух людей, сидящих рядом и смотрящих на ночной город">
+        <div class="city"></div><div class="head one"></div><div class="head two"></div><div class="person one"></div><div class="person two"></div>
+      </div>
+    </div>
+    <div class="hero-bottom"><span class="hero-signoff">ТЫ ВСЕГДА В МОИХ МЫСЛЯХ <span class="hero-signoff-heart" aria-hidden="true">♡</span></span></div>
+  </section>
+
+  <section class="content">
+    <div class="section-top">
+      <div><div class="eyebrow">01 / наша вселенная</div><h2>Маленькие вещи.<br>Большие чувства.</h2></div>
+      <p>Я хотел оставить для нас место, куда можно вернуться в любой момент. Даже если мы сейчас не рядом — здесь всегда есть частичка нас.</p>
+    </div>
+    <div class="cards">
+      <a class="card" href="#places"><div class="card-bg"></div><div class="card-number">01 / PLACES</div><div class="card-title">Наши<br>места</div><div class="card-desc">точки на карте, которые стали нашими</div><span class="card-arrow">→</span></a>
+      <a class="card" href="#message"><div class="card-bg"></div><div class="card-number">02 / WORDS</div><div class="card-title">Тебе<br>от меня</div><div class="card-desc">слова на случай, когда меня нет рядом</div><span class="card-arrow">→</span></a>
+      <a class="card" href="#music"><div class="card-bg"></div><div class="card-number">03 / MUSIC</div><div class="card-title">Наша<br>музыка</div><div class="card-desc">треки, которые напоминают о нас</div><span class="card-arrow">→</span></a>
+      <a class="card" href="#moments"><div class="card-bg"></div><div class="card-number">04 / MEMORY</div><div class="card-title">Наши<br>моменты</div><div class="card-desc">воспоминания, которые хочется беречь</div><span class="card-arrow">→</span></a>
+      <a class="card" href="#always"><div class="card-bg"></div><div class="card-number">05 / ALWAYS</div><div class="card-title">Всегда<br>рядом</div><div class="card-desc">даже если между нами километры</div><span class="card-arrow">→</span></a>
+    </div>
+  </section>
+
+  <section class="content" id="message">
+    <div class="section-top">
+      <div><div class="eyebrow">02 / личное сообщение</div><h2>Если вдруг<br>соскучишься.</h2></div>
+      <p>Небольшое напоминание, которое я хочу оставить тебе — на любой день и любое настроение.</p>
+    </div>
+    <div class="message-panel">
+      <div class="message-aside"><div class="script">для тебя,<br>в любое время ♡</div><small>от меня · с любовью</small></div>
+      <div class="message-main"><blockquote id="messageText">«Каждое утро,просыпаясь -<br><span>я,выбираю тебя</span>»</blockquote></div>
+    </div>
+  </section>
+
+  <section class="content" id="places">
+    <div class="section-top"><div><div class="eyebrow">03 / наши места</div><h2>Город хранит<br>наши следы.</h2></div><p>Центр города всегда будет рад нас видеть,также как и я тебя,рядом с собой</p></div>
+    <div class="memory-list">
+      <article class="memory"><b>МЕСТО 01</b><h3>Наша первая прогулка</h3><p>Я шел и смотрел на тебя как на самые яркие звезды на небе</p></article>
+      <article class="memory"><b>МЕСТО 02</b><h3>Где время остановилось</h3><p>Я всегда буду рад сесть с тобой на одну лавочку и не вставать,пока ты того не захочешь</p></article>
+      <article class="memory"><b>МЕСТО 03</b><h3>Куда ещё пойдём</h3><p>Это нам еще предстоит узнать</p></article>
+    </div>
+  </section>
+
+  <section class="content" id="music">
+    <div class="section-top"><div><div class="eyebrow">04 / саундтрек</div><h2>У нашей истории<br>есть свой звук.</h2></div></div>
+    <div class="message-panel music-panel">
+      <div class="message-aside music-aside"><div class="script">нажми play <span aria-hidden="true">♫</span></div><small>песня, которая про нас</small></div>
+      <button class="track-trigger" id="trackTrigger" type="button" aria-label="Воспроизвести трек">
+        <span class="track-play" id="trackPlay" aria-hidden="true">▶</span>
+        <span class="track-title">Трек, который каждый раз<br><span>возвращает к тебе.</span></span>
+        <span class="track-state" id="trackState">НАЖМИ, ЧТОБЫ ПОСЛУШАТЬ</span>
+      </button>
+      <audio id="ourTrack" preload="metadata" src="Kai_Angel_-_Flowers_82278516.mp3"></audio>
+    </div>
+  </section>
+
+  <section class="content" id="moments">
+    <div class="section-top"><div><div class="eyebrow">05 / моменты</div><h2>То, что хочется<br>оставить с нами.</h2></div><p>Позже здесь можно разместить ваши фотографии. Сейчас это место оставлено для воспоминаний, которые появятся со временем.</p></div>
+    <div class="memory-list">
+      <article class="memory"><b>КАДР 01</b><h3>Твой смех</h3><p>Есть звуки, которые делают даже самый плохой день лучше.</p></article>
+      <article class="memory"><b>КАДР 02</b><h3>Наши вечера</h3><p>Когда не нужно ничего придумывать — просто хорошо рядом.</p></article>
+      <article class="memory"><b>КАДР 03</b><h3>Продолжение следует</h3><p>Самые красивые воспоминания у нас ещё впереди.</p></article>
+    </div>
+  </section>
+
+  <section class="last" id="always">
+    <div class="eyebrow">если ты читаешь это</div>
+    <h2>Я всё ещё выбираю тебя. ♡</h2>
+    <p>Не только в красивые дни и не только когда всё просто. Я хочу разделять с тобой обычные вечера, долгие прогулки, тишину и всё то настоящее, из чего складывается жизнь.</p>
+    <a class="red" href="#top">НАВЕРХ, К НАШИМ ЗВЁЗДАМ ↑</a>
+  </section>
+</main>
+<footer><span>Сделано для тебя, а не для всех</span><span>одним целым · <span id="year"></span> ♡</span></footer>
+</div>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+const ourTrack = document.getElementById('ourTrack');
+const trackTrigger = document.getElementById('trackTrigger');
+const trackPlay = document.getElementById('trackPlay');
+const trackState = document.getElementById('trackState');
+const musicStatus = document.getElementById('musicStatus');
+function updateTrackUI() {
+  const playing = !ourTrack.paused;
+  trackPlay.textContent = playing ? 'Ⅱ' : '▶';
+  trackState.textContent = playing ? 'СЕЙЧАС ИГРАЕТ · НАЖМИ, ЧТОБЫ ПАУЗА' : 'НАЖМИ, ЧТОБЫ ПОСЛУШАТЬ';
+  trackTrigger.setAttribute('aria-label', playing ? 'Поставить трек на паузу' : 'Воспроизвести трек');
+  musicStatus.textContent = playing ? 'ПРИОСТАНОВИТЬ МУЗЫКУ' : 'ВКЛЮЧИТЬ МУЗЫКУ';
+}
+async function toggleTrack() {
+  if (ourTrack.paused) {
+    try { await ourTrack.play(); } catch (error) {
+      trackState.textContent = 'НЕ УДАЛОСЬ ЗАПУСТИТЬ · НАЖМИ ЕЩЁ РАЗ';
+    }
+  } else {
+    ourTrack.pause();
+  }
+  updateTrackUI();
+}
+trackTrigger.addEventListener('click', toggleTrack);
+ourTrack.addEventListener('play', updateTrackUI);
+ourTrack.addEventListener('pause', updateTrackUI);
+ourTrack.addEventListener('ended', updateTrackUI);
+document.getElementById('musicBtn').addEventListener('click', () => {
+  document.getElementById('music').scrollIntoView({behavior:'smooth'});
+  toggleTrack();
+});
+</script>
+</body>
+</html>
