@@ -2,345 +2,332 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#050505">
-<meta name="description" content="Наше маленькое место во вселенной. Я хочу быть с тобой одним целым.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#05060a">
+<meta name="description" content="Наше маленькое место во вселенной. Я хочу быть с тобой одним целым. Личный сайт пары, привязанный к парным NFC-брелкам.">
+<meta property="og:title" content="Одним целым ♡">
+<meta property="og:description" content="Наше маленькое место во вселенной. Я хочу быть с тобой одним целым.">
+<meta property="og:type" content="website">
 <title>Одним целым ♡</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap');
-:root{--bg:#050505;--red:#b52e3a;--red2:#e34a56;--white:#eee9e9;--muted:#8d8588;--line:#33282a}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--white);font-family:Manrope,Arial,sans-serif;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background:radial-gradient(ellipse at 80% 38%,#3a0b0d33,transparent 36%),radial-gradient(ellipse at 12% 75%,#3b0b0c22,transparent 28%),#050505}
-a{color:inherit;text-decoration:none}
-button{font:inherit}
-.wrap{width:min(1240px,calc(100% - 48px));margin:auto}
-header{height:76px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:2}
-.logo{font-family:Caveat,cursive;color:var(--red2);font-size:31px;transform:rotate(-5deg);display:inline-block}
-.header-right{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:10px;letter-spacing:.15em;text-transform:uppercase}
-.sound{border:0;background:none;color:var(--red2);cursor:pointer;letter-spacing:.12em;font-size:10px}
-.hero{position:relative;min-height:620px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;border-bottom:1px solid #ffffff08}
-.sky{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,.08) 52%,rgba(5,0,1,.48) 100%),url("assets/starfield.png") center 42%/cover no-repeat;opacity:.96;transform:scale(1.015)}
-.nebula{position:absolute;left:-10%;right:-10%;bottom:0;height:48%;background:radial-gradient(ellipse at 14% 95%,#6b151a5c,transparent 24%),radial-gradient(ellipse at 77% 77%,#68121970,transparent 28%);filter:blur(14px)}
-.shooting{position:absolute;top:12%;right:19%;width:145px;height:1px;background:linear-gradient(90deg,transparent,#f5e8e8);transform:rotate(27deg);box-shadow:0 0 7px #fff7}
-.hero-content{position:relative;z-index:1;width:100%;padding:50px 0 0}
-.side-note{position:absolute;top:42%;font-family:Caveat,cursive;color:#a59b9d;font-size:19px;line-height:1.1;transform:rotate(-8deg);text-align:left}
-.side-note.left{left:1%}.side-note.right{right:1%;transform:rotate(7deg)}
-.side-note span{display:block;color:var(--red2);font-size:23px;margin-top:7px}
-h1{font-family:Caveat,cursive;font-weight:400;font-size:clamp(49px,8vw,105px);line-height:.87;letter-spacing:-.025em;color:var(--red2);margin:0 auto 22px;max-width:900px;text-shadow:0 0 35px #7c111522;transform:rotate(-2deg)}
-h1 span{display:block;margin-top:16px}
-.heart{font-family:Caveat,cursive;color:var(--red2);font-size:42px;line-height:1;margin:16px 0}
-.cosmic-scene{height:170px;width:min(520px,82%);margin:18px auto 0;position:relative;display:grid;place-items:center;isolation:isolate}
-.cosmic-scene:before{content:"";position:absolute;left:5%;right:5%;bottom:18px;height:42px;background:radial-gradient(ellipse at 50% 50%,#74141c30,transparent 68%);filter:blur(15px);z-index:-1}
-.orbit{position:absolute;left:50%;top:48%;width:clamp(230px,42vw,430px);height:76px;border:1px solid #b83a4545;border-radius:50%;transform:translate(-50%,-50%) rotate(-12deg);box-shadow:0 0 22px #8c202010,inset 0 0 18px #8c202010}
-.orbit-two{width:clamp(180px,34vw,350px);height:112px;transform:translate(-50%,-50%) rotate(24deg);border-color:#eee0e012}
-.planet{display:none}
-.planet-glow{display:none}
-.couple-art{position:absolute;inset:0;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 12px #000);opacity:.94}
-/* Abstract moon-and-constellation artwork; no human silhouettes */
-.cosmic-moon{filter:drop-shadow(0 0 14px #b52e3a28)}
-.cosmic-star{fill:#eee5e5;opacity:.78}
-.cosmic-line{fill:none;stroke:#b52e3a;stroke-opacity:.42;stroke-width:1.2}
-.hero-bottom{position:absolute;bottom:20px;left:0;right:0;display:flex;justify-content:flex-end;align-items:center;color:var(--red2);font-size:9px;letter-spacing:.16em;text-transform:uppercase}
-.hero-signoff{display:inline-flex;align-items:center;justify-content:flex-end;gap:9px;white-space:nowrap;line-height:1}
-.hero-signoff-heart{display:inline-block;font-size:13px;line-height:1;transform:translateY(-.5px);flex:0 0 auto}
-section.content{padding:64px 0;border-bottom:1px solid #ffffff0c}
-.section-top{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:25px}
-.eyebrow{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--red2)}
-h2{font-size:clamp(27px,4vw,42px);font-weight:500;letter-spacing:-.06em;line-height:1.15;margin:12px 0 0}
-.section-top p{font-size:12px;line-height:1.9;color:var(--muted);max-width:390px;margin:0}
-.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}
-.card{height:250px;position:relative;overflow:hidden;border:1px solid #393031;background:#080808;display:flex;flex-direction:column;justify-content:flex-end;padding:17px;transition:transform .25s,border-color .25s}
-.card:hover{transform:translateY(-5px);border-color:#873038}
-.card-bg{position:absolute;inset:0;background:radial-gradient(1px 1px at 20% 20%,#fff8,transparent 2px),radial-gradient(1px 1px at 70% 15%,#fff7,transparent 2px),linear-gradient(180deg,#111 0%,#080808 80%)}
-.card:nth-child(1) .card-bg{background:linear-gradient(180deg,#09090970,#050505),radial-gradient(ellipse at 50% 40%,#514344,#090909 68%)}
-.card:nth-child(2) .card-bg{background:radial-gradient(ellipse at 50% 32%,#4c3c3c,#0a0909 50%),linear-gradient(#171313,#050505)}
-.card:nth-child(3) .card-bg{background:radial-gradient(1px 1px at 40% 20%,#fff,transparent 2px),radial-gradient(1px 1px at 70% 35%,#fff,transparent 2px),#050505}
-.card:nth-child(4) .card-bg{background:linear-gradient(180deg,#1a1515,#060606),radial-gradient(ellipse at 60% 45%,#403131,transparent)}
-.card:nth-child(5) .card-bg{background:radial-gradient(circle at 50% 30%,#b9a9a9 0 2px,transparent 5px),linear-gradient(#121010,#050505)}
-.card-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,#000 100%)}
-
-/* Cinematic photo panels for the five main navigation cards */
-.card-bg{background-size:cover;background-position:center 38%;transition:transform .65s ease,filter .4s ease;filter:saturate(.82)}
-.card:nth-child(1) .card-bg{background:linear-gradient(180deg,rgba(5,5,5,.12) 0%,rgba(5,5,5,.14) 30%,rgba(5,5,5,.92) 100%),url("assets/card-places.jpg") center 42%/cover no-repeat}
-.card:nth-child(2) .card-bg{background:linear-gradient(180deg,rgba(5,5,5,.12) 0%,rgba(5,5,5,.18) 30%,rgba(5,5,5,.94) 100%),url("assets/card-words.jpg") center 42%/cover no-repeat}
-.card:nth-child(3) .card-bg{background:linear-gradient(180deg,rgba(5,5,5,.08) 0%,rgba(5,5,5,.18) 30%,rgba(5,5,5,.95) 100%),url("assets/card-music.jpg") center 42%/cover no-repeat}
-.card:nth-child(4) .card-bg{background:linear-gradient(180deg,rgba(5,5,5,.12) 0%,rgba(5,5,5,.18) 30%,rgba(5,5,5,.95) 100%),url("assets/card-memory.jpg") center 42%/cover no-repeat}
-.card:nth-child(5) .card-bg{background:linear-gradient(180deg,rgba(5,5,5,.10) 0%,rgba(5,5,5,.16) 30%,rgba(5,5,5,.94) 100%),url("assets/card-always.jpg") center 42%/cover no-repeat}
-.card-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02) 0%,rgba(0,0,0,.04) 28%,rgba(0,0,0,.65) 100%);pointer-events:none}
-.card:hover .card-bg{transform:scale(1.045);filter:saturate(1.02)}
-@media(max-width:700px){.card-bg{background-position:center 35%}.card:nth-child(n) .card-bg{background-position:center 38%}}
-
-.card-number{position:absolute;top:14px;left:15px;font-size:9px;letter-spacing:.12em;color:#b5a8a8}
-.card-title{position:relative;font-family:Caveat,cursive;color:var(--red2);font-size:32px;line-height:.92;transform:rotate(-4deg);margin-bottom:13px}
-.card-desc{position:relative;font-size:9px;line-height:1.7;color:#a19899;text-transform:uppercase;letter-spacing:.06em;max-width:150px}
-.card-arrow{position:absolute;right:15px;bottom:14px;color:var(--red2);font-size:20px}
-.message-panel{display:grid;grid-template-columns:.8fr 1.2fr;border:1px solid #3b2b2d;background:linear-gradient(120deg,#0b0909,#080808);min-height:280px}
-.message-aside{padding:32px;border-right:1px solid #332729;display:flex;flex-direction:column;justify-content:flex-start;gap:20px}
-.message-aside .script{font-family:Caveat,cursive;color:var(--red2);font-size:42px;line-height:1.08;display:block}
-.message-aside small{display:block;font-size:9px;line-height:1.5;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
-.message-main{padding:32px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
-.message-main blockquote{font-family:Caveat,cursive;font-size:clamp(29px,4vw,48px);line-height:1.05;margin:0 0 22px;color:#eee4e4}
-.message-main blockquote span{color:var(--red2)}
-button.red{border:1px solid #8c3038;background:transparent;color:var(--red2);padding:12px 17px;cursor:pointer;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
-button.red:hover{background:#8c30381a}
-.memory-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.memory{border-top:1px solid #733037;padding:18px 0 0}
-.memory b{font-size:9px;letter-spacing:.15em;color:var(--red2)}
-.memory h3{font-family:Caveat,cursive;font-size:28px;font-weight:400;line-height:1.15;margin:15px 0 14px}
-.memory p{font-size:11px;line-height:1.8;color:var(--muted);margin:0}
-.last{text-align:center;padding:80px 0 70px}
-.last h2{font-family:Caveat,cursive;color:var(--red2);font-size:clamp(43px,7vw,75px);font-weight:400;transform:rotate(-2deg)}
-.last p{max-width:460px;margin:20px auto 25px;font-size:12px;line-height:1.9;color:var(--muted)}
-footer{border-top:1px solid #ffffff10;padding:20px 0;display:flex;justify-content:space-between;gap:15px;font-size:9px;color:#75696b;letter-spacing:.12em;text-transform:uppercase}
-#musicStatus{color:var(--red2)}
-.music-panel{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;min-height:0;max-width:900px;padding:clamp(22px,4vw,42px);gap:clamp(18px,2.5vw,28px);border:1px solid #3b2b2d;background:radial-gradient(ellipse at 88% 78%,#4d101b45 0,transparent 40%),linear-gradient(120deg,#0b0909,#080808 65%,#100809)}
-.music-panel:before{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;opacity:.68;background:radial-gradient(1px 1px at 9% 20%,#fff 0 1px,transparent 1.8px),radial-gradient(1px 1px at 23% 71%,#f7dfe0 0 1px,transparent 1.8px),radial-gradient(1.2px 1.2px at 43% 16%,#fff 0 1px,transparent 2px),radial-gradient(1px 1px at 69% 32%,#fff 0 1px,transparent 1.8px),radial-gradient(1px 1px at 78% 85%,#f7dfe0 0 1px,transparent 1.8px),radial-gradient(1px 1px at 92% 18%,#fff 0 1px,transparent 1.8px)}
-.music-panel:after{content:"";position:absolute;z-index:-1;pointer-events:none;width:clamp(190px,30vw,330px);aspect-ratio:1;right:-7%;top:50%;transform:translateY(-38%);border-radius:50%;opacity:.2;background:repeating-radial-gradient(circle at center,#b9a5a7 0 1px,#1b1415 2px 9px,#080808 10px 14px);box-shadow:0 0 70px #8b263025,inset 0 0 35px #000;mask-image:radial-gradient(circle,#000 25%,#0009 62%,transparent 72%)}
-.music-aside{position:relative;border:0;padding:0;gap:8px;background:transparent}
-.music-aside .script{font-size:clamp(34px,4vw,48px);line-height:1.05}
-.music-aside .script span{color:var(--red2)}
-.track-trigger{position:relative;z-index:1;display:flex;align-items:center;gap:clamp(12px,2vw,22px);width:100%;padding:clamp(20px,3vw,30px) 0 4px;border:0;border-top:1px solid #493235;background:transparent;color:var(--white);text-align:left;cursor:pointer;min-width:0}
-.track-play{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border:1px solid #a32f3b;border-radius:50%;color:var(--red2);background:#090707b8;transition:background .2s,transform .2s}
-.track-play svg{display:block;width:15px;height:15px;fill:currentColor}
-.track-trigger:hover .track-play{background:#7f202b35;transform:scale(1.05)}
-.track-title{font-family:Caveat,cursive;font-size:clamp(27px,4vw,43px);line-height:1.08;overflow-wrap:anywhere}
-.track-title span{color:var(--red2)}
-.track-trigger:hover .track-title{color:#fff}
-.track-trigger:focus-visible{outline:1px solid var(--red2);outline-offset:5px}
-.volume-row{position:relative;z-index:1;display:flex;align-items:center;gap:13px;max-width:430px;padding-left:60px;color:#a99b9e}
-.volume-icon{width:17px;height:17px;flex:0 0 17px;color:var(--red2)}
-.volume-slider{appearance:none;-webkit-appearance:none;flex:1;min-width:60px;height:4px;border-radius:99px;outline:none;cursor:pointer;background:linear-gradient(to right,var(--red2) 0%,var(--red2) 75%,#493235 75%,#493235 100%)}
-.volume-slider::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:#f0e8e9;border:2px solid var(--red2);box-shadow:0 0 10px #e7445533}
-.volume-slider::-moz-range-thumb{width:10px;height:10px;border-radius:50%;background:#f0e8e9;border:2px solid var(--red2)}
-.volume-value{font-size:10px;letter-spacing:.08em;min-width:29px;text-align:right;color:#b6a8aa}
-@media(max-width:620px){.music-panel{padding:22px;gap:20px}.music-aside .script{font-size:34px}.track-trigger{gap:12px;align-items:center;padding-top:20px}.track-play{flex-basis:36px;width:36px;height:36px}.track-play svg{width:13px;height:13px}.track-title{font-size:clamp(27px,7vw,34px);flex:1}.volume-row{padding-left:48px;gap:10px}.music-panel:after{width:220px;right:-20%;top:65%;opacity:.16}}
-@media(max-width:900px){.cards{grid-template-columns:repeat(3,1fr)}.card{height:220px}.side-note{display:none}.hero{min-height:590px}}
-@media(max-width:620px){.wrap{width:calc(100% - 28px)}header{height:65px}.logo{font-size:27px}.header-right{gap:10px;font-size:8px}.sound{font-size:8px;padding:0}.hero{min-height:540px}.hero-content{padding-top:20px}h1{font-size:clamp(48px,13vw,75px)}.couple{height:150px}.hero-bottom{font-size:7px}.section-top{display:block}.section-top p{margin-top:15px}.cards{grid-template-columns:repeat(2,1fr);gap:9px}.card{height:205px;padding:13px}.card-title{font-size:29px}.message-panel{grid-template-columns:1fr}.message-aside{border-right:0;border-bottom:1px solid #332729;min-height:0;padding:22px;gap:10px}.message-aside .script{font-size:34px;line-height:1.08}.message-main{padding:24px}.memory-list{grid-template-columns:1fr;gap:25px}.content{padding:48px 0!important}.last{padding:62px 0 55px}footer{flex-direction:column;font-size:8px}}
-
-/* Personal-message section: quiet starfield and a barely visible heart-shaped nebula */
-.message-section{position:relative;isolation:isolate;overflow:hidden}
-.message-section:before{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;background:
-  radial-gradient(1px 1px at 8% 18%,#fff9 0 1px,transparent 1.8px),
-  radial-gradient(1px 1px at 19% 72%,#f7dfe077 0 1px,transparent 1.8px),
-  radial-gradient(1.5px 1.5px at 32% 28%,#fff8 0 1px,transparent 2px),
-  radial-gradient(1px 1px at 46% 83%,#fff8 0 1px,transparent 1.8px),
-  radial-gradient(1px 1px at 62% 15%,#fff9 0 1px,transparent 1.8px),
-  radial-gradient(1.5px 1.5px at 76% 66%,#f5dfe077 0 1px,transparent 2px),
-  radial-gradient(1px 1px at 91% 34%,#fff9 0 1px,transparent 1.8px),
-  radial-gradient(ellipse at 78% 52%,#6b111b20,transparent 38%),
-  radial-gradient(ellipse at 14% 44%,#4b11151c,transparent 34%);
-  opacity:.9}
-.message-section:after{content:"♡";position:absolute;z-index:-1;right:5%;top:20%;font-family:Arial,sans-serif;font-size:clamp(220px,34vw,470px);font-weight:200;line-height:1;color:#e34a56;opacity:.035;transform:rotate(-12deg);pointer-events:none}
-.message-section>.wrap{position:relative;z-index:1}
-.message-section .message-panel{position:relative;overflow:hidden;background:linear-gradient(115deg,rgba(12,8,9,.94),rgba(6,6,7,.91));box-shadow:0 18px 70px #0005}
-.message-section .message-panel:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 0 48%,#e34a5608 72%,transparent 100%)}
-.message-section .message-aside,.message-section .message-main{position:relative;z-index:1}
-.message-section .message-aside:before{content:"✦";position:absolute;right:24px;top:24px;color:#e34a56;font-size:13px;opacity:.55}
-@media(max-width:700px){.message-section:after{right:-12%;top:27%;font-size:270px}.message-section .message-aside:before{right:20px;top:19px}.message-section .message-panel{box-shadow:0 12px 42px #0006}}
-
-/* Responsive layout refinements: phone, tablet and desktop */
-.wrap{width:min(1180px,calc(100% - 64px))}
-section.content{padding:clamp(54px,7vw,92px) 0}
-.section-top{align-items:flex-end;margin-bottom:clamp(24px,3vw,38px)}
-.section-top>div{min-width:0}
-.section-top p{max-width:430px;font-size:clamp(13px,1.15vw,16px)}
-.cards{grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(10px,1.4vw,18px)}
-.card{min-width:0;height:clamp(220px,23vw,300px);padding:clamp(14px,1.5vw,22px)}
-.card-title{font-size:clamp(29px,2.7vw,39px);overflow-wrap:anywhere}
-.card-desc{font-size:clamp(9px,.8vw,11px);max-width:calc(100% - 8px)}
-.card-arrow{right:13px;bottom:12px}
-.message-panel{min-width:0}
-.message-aside,.message-main{min-width:0}
-.message-main blockquote{overflow-wrap:anywhere}
-.memory-list{align-items:stretch;gap:clamp(16px,2.5vw,30px)}
-.memory{min-width:0}
-.memory h3{overflow-wrap:anywhere}
-.music-panel{width:100%;max-width:900px;margin-inline:auto;padding:clamp(22px,4vw,42px);gap:clamp(20px,3vw,34px)}
-.music-aside .script{font-size:clamp(34px,4vw,48px)}
-.track-trigger{gap:clamp(12px,2vw,22px);padding:clamp(20px,3vw,30px) 0 4px;min-width:0}
-.track-title{overflow-wrap:anywhere}
-.track-state{font-size:9px;max-width:150px}
-.last .red{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:12px 18px;border:1px solid #8c3038;color:var(--red2);font-size:10px;letter-spacing:.1em;text-transform:uppercase}
-.last .red:hover{background:#8c30381a}
-@media(min-width:1500px){.wrap{width:min(1240px,calc(100% - 100px))}.hero{min-height:700px}.card{height:300px}}
-@media(max-width:1050px){.wrap{width:calc(100% - 48px)}.cards{grid-template-columns:repeat(3,minmax(0,1fr))}.card{height:245px}.card-title{font-size:clamp(30px,3.5vw,40px)}.section-top p{max-width:360px}.hero{min-height:590px}}
-@media(max-width:700px){.wrap{width:calc(100% - 32px)}header{height:64px}.header-right{gap:10px}.header-right>span{display:none}.hero{min-height:540px}.hero-content{padding:28px 0 30px}h1{font-size:clamp(45px,11.5vw,72px);line-height:.96;max-width:100%;padding-inline:4px}h1 span{margin-top:12px}.couple{width:min(420px,86%);height:145px}.hero-bottom{font-size:7px;letter-spacing:.1em}.hero-signoff{gap:6px}.hero-signoff-heart{font-size:12px}.section-top{display:flex;flex-direction:column;align-items:flex-start;gap:14px}.section-top p{max-width:unset;margin:0;font-size:14px;line-height:1.8}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{height:clamp(190px,48vw,245px);padding:13px}.card-title{font-size:clamp(27px,7vw,35px);margin-bottom:10px}.card-desc{font-size:9px;line-height:1.65;max-width:calc(100% - 4px);padding-right:8px}.card-arrow{font-size:20px;right:10px;bottom:9px}.message-panel{grid-template-columns:1fr}.message-aside{border-right:0;border-bottom:1px solid #332729;padding:22px;gap:9px}.message-aside .script{font-size:clamp(32px,8vw,38px);line-height:1.08}.message-main{padding:24px 22px}.message-main blockquote{font-size:clamp(30px,7.6vw,42px);line-height:1.12;margin:0}.memory-list{grid-template-columns:1fr;gap:25px}.memory{padding-top:17px}.memory h3{font-size:30px;margin:12px 0 10px}.memory p{font-size:13px;line-height:1.8}.music-panel{padding:20px;gap:18px}.music-aside .script{font-size:34px}.track-trigger{display:grid;grid-template-columns:38px minmax(0,1fr);align-items:center;gap:12px;padding-top:18px}.track-play{width:36px;height:36px;flex-basis:36px}.track-title{font-size:clamp(27px,7vw,34px);line-height:1.12}.track-state{grid-column:2;margin:0;max-width:none;text-align:left;font-size:8px}.last{padding:58px 0 48px}.last h2{line-height:1.02}.last p{font-size:13px;line-height:1.85}footer{flex-direction:column;gap:9px;padding:18px 0}}
-@media(max-width:380px){.wrap{width:calc(100% - 24px)}.logo{font-size:24px}.sound{font-size:7px;letter-spacing:.06em}.hero{min-height:510px}h1{font-size:clamp(40px,11vw,48px)}.cards{gap:8px}.card{height:190px;padding:10px}.card-number{left:10px;font-size:8px}.card-title{font-size:27px}.card-desc{font-size:8px}.card-arrow{right:8px;bottom:7px}.message-main{padding:21px 17px}.music-panel{padding:17px}.track-title{font-size:26px}}
-/* Final card-grid calibration: match the five-card desktop reference without stretching the cards. */
-@media(min-width:1051px){
-  .wrap{width:min(1240px,calc(100% - 64px))}
-  main > section.content:nth-of-type(2){padding-top:calc(clamp(54px,7vw,92px) + 12px)}
-  .section-top{margin-bottom:clamp(30px,2.6vw,38px)}
-  .cards{grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;align-items:stretch}
-  .card{height:300px;min-height:300px;padding:20px 22px}
-  .card-title{font-size:clamp(32px,2.55vw,38px);line-height:.94;margin-bottom:12px}
-  .card-desc{font-size:10px;line-height:1.75;max-width:calc(100% - 4px)}
-  .card-number{top:15px;left:14px;font-size:9px}
-  .card-arrow{right:14px;bottom:12px}
-}
-@media(min-width:701px) and (max-width:1050px){
-  .cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-  .card{height:255px;min-height:255px;padding:18px}
-}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
-</style>
+<script>
+  document.documentElement.classList.add('js');
+  setTimeout(function () {
+    if (!document.documentElement.classList.contains('js-ready')) {
+      document.documentElement.classList.add('js-fallback');
+    }
+  }, 2500);
+</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305060a'/%3E%3Cpath d='M32 50C14 38 12 26 20 20c6-4.5 12 1 12 6 0-5 6-10.5 12-6 8 6 6 18-12 30z' fill='%23e8495a'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2305060a'/%3E%3Cpath d='M32 52C12 39 10 25 19 19c7-4.5 13 1.5 13 7 0-5.5 6-11.5 13-7 9 6 7 20-13 33z' fill='%23e8495a'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap">
-<header>
-  <a href="#" class="logo">Pink Phloyd ♡</a>
-  <div class="header-right"><span>private universe</span><button class="sound" id="musicBtn" type="button" aria-label="Перейти к музыкальному разделу и включить трек">♫ <span id="musicStatus">ВКЛЮЧИТЬ МУЗЫКУ</span></button></div>
+<div class="progress" aria-hidden="true"><span class="progress__bar" id="scrollProgress"></span></div>
+
+<header class="header" id="siteHeader">
+  <div class="wrap header__inner">
+    <a href="#top" class="logo">Pink Phloyd <span class="logo__heart" aria-hidden="true">♡</span></a>
+    <nav class="nav" aria-label="Разделы сайта">
+      <a href="#places">места</a>
+      <a href="#message">слова</a>
+      <a href="#music">музыка</a>
+      <a href="#moments">моменты</a>
+      <a href="#always">рядом</a>
+    </nav>
+    <button class="sound" id="musicBtn" type="button" aria-label="Включить или поставить на паузу музыку">
+      <span class="sound__icon" aria-hidden="true">♫</span>
+      <span class="sound__label" id="musicStatus">ВКЛЮЧИТЬ МУЗЫКУ</span>
+    </button>
+  </div>
 </header>
-<main>
-  <section class="hero" id="top">
-    <div class="sky"></div><div class="nebula"></div><div class="shooting"></div>
-    <div class="side-note left">ты<br>мой покой<br>в любом<br>шуме<span>♡</span></div>
-    <div class="side-note right">где бы ты<br>ни была<br>я рядом<span>♡</span></div>
-    <div class="hero-content">
-      <div class="eyebrow">наш маленький космос</div>
-      <h1>Я хочу быть<br><span>с тобой одним целым</span></h1>
-      <div class="heart">♡</div>
-      <div class="cosmic-scene" aria-hidden="true">
-        <span class="orbit orbit-one"></span><span class="orbit orbit-two"></span>
-        <span class="planet"></span><span class="planet-glow"></span>
-        <svg class="couple-art" viewBox="0 0 520 180" role="presentation" xmlns="http://www.w3.org/2000/svg">
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="hero">
+    <div class="hero__sky" aria-hidden="true"></div>
+    <div class="hero__nebula" aria-hidden="true"></div>
+    <div class="hero__grain" aria-hidden="true"></div>
+    <div class="hero__shooting" aria-hidden="true"><i></i><i></i></div>
+
+    <p class="hero__note hero__note--left" aria-hidden="true">ты<br>мой покой<br>в любом<br>шуме<span>♡</span></p>
+    <p class="hero__note hero__note--right" aria-hidden="true">где бы ты<br>ни была<br>я рядом<span>♡</span></p>
+
+    <div class="wrap hero__inner">
+      <p class="eyebrow hero__eyebrow">наш маленький космос</p>
+      <h1 class="hero__title">Я хочу быть<br><span>с тобой одним целым</span></h1>
+      <p class="hero__heart" aria-hidden="true">♡</p>
+
+      <div class="cosmos" aria-hidden="true">
+        <span class="cosmos__orbit cosmos__orbit--one"></span>
+        <span class="cosmos__orbit cosmos__orbit--two"></span>
+        <svg class="cosmos__art" viewBox="0 0 520 180" role="presentation" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <radialGradient id="moonFill" cx="32%" cy="27%" r="76%"><stop stop-color="#d65b65"/><stop offset=".55" stop-color="#7c2029"/><stop offset="1" stop-color="#18080b"/></radialGradient>
-            <linearGradient id="moonEdge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e66a73" stop-opacity=".8"/><stop offset="1" stop-color="#64141b" stop-opacity=".1"/></linearGradient>
+            <radialGradient id="moonFill" cx="32%" cy="27%" r="76%">
+              <stop stop-color="#d65b65"/><stop offset=".55" stop-color="#7c2029"/><stop offset="1" stop-color="#18080b"/>
+            </radialGradient>
+            <linearGradient id="moonEdge" x1="0" y1="0" x2="1" y2="1">
+              <stop stop-color="#e66a73" stop-opacity=".8"/><stop offset="1" stop-color="#64141b" stop-opacity=".1"/>
+            </linearGradient>
           </defs>
-          <g class="cosmic-moon">
+          <g class="cosmos__moon">
             <circle cx="260" cy="86" r="34" fill="url(#moonFill)" stroke="url(#moonEdge)" stroke-width="1.2"/>
-            <circle cx="276" cy="74" r="31" fill="#050505"/>
+            <circle cx="276" cy="74" r="31" fill="#05060a"/>
             <path d="M237 112 Q258 129 281 109" fill="none" stroke="#d64a56" stroke-opacity=".28" stroke-width="1"/>
           </g>
-          <path class="cosmic-line" d="M64 127 Q260 22 456 127"/>
-          <path class="cosmic-line" d="M104 143 Q260 67 416 143" stroke-opacity=".22"/>
-          <path d="M84 42 L90 54 L102 60 L90 65 L84 78 L79 65 L67 60 L79 54Z" fill="#e8dfe0" opacity=".7"/>
-          <path d="M425 38 L429 47 L438 51 L429 55 L425 64 L421 55 L412 51 L421 47Z" fill="#b52e3a" opacity=".85"/>
-          <circle class="cosmic-star" cx="151" cy="80" r="2.1"/><circle class="cosmic-star" cx="366" cy="93" r="1.8"/>
-          <circle class="cosmic-star" cx="196" cy="31" r="1.4"/><circle class="cosmic-star" cx="329" cy="139" r="1.5"/>
-          <circle cx="260" cy="27" r="2" fill="#e34a56" opacity=".8"/><circle cx="260" cy="145" r="1.5" fill="#eee5e5" opacity=".65"/>
+          <path class="cosmos__line" d="M64 127 Q260 22 456 127"/>
+          <path class="cosmos__line cosmos__line--soft" d="M104 143 Q260 67 416 143"/>
+          <path class="cosmos__spark cosmos__spark--bright" d="M84 42 L90 54 L102 60 L90 65 L84 78 L79 65 L67 60 L79 54Z"/>
+          <path class="cosmos__spark cosmos__spark--rose" d="M425 38 L429 47 L438 51 L429 55 L425 64 L421 55 L412 51 L421 47Z"/>
+          <circle class="cosmos__star" cx="151" cy="80" r="2.1" style="--d:0s"/>
+          <circle class="cosmos__star" cx="366" cy="93" r="1.8" style="--d:.9s"/>
+          <circle class="cosmos__star" cx="196" cy="31" r="1.4" style="--d:1.6s"/>
+          <circle class="cosmos__star" cx="329" cy="139" r="1.5" style="--d:2.3s"/>
+          <circle class="cosmos__star cosmos__star--rose" cx="260" cy="27" r="2" style="--d:1.1s"/>
+          <circle class="cosmos__star" cx="260" cy="145" r="1.5" style="--d:2.9s"/>
         </svg>
       </div>
     </div>
-    <div class="hero-bottom"><span class="hero-signoff">ТЫ ВСЕГДА В МОИХ МЫСЛЯХ <span class="hero-signoff-heart" aria-hidden="true">♡</span></span></div>
-  </section>
 
-  <section class="content">
-    <div class="section-top">
-      <div><div class="eyebrow">01 / наша вселенная</div><h2>Маленькие вещи.<br>Большие чувства.</h2></div>
-      <p>Я хотел оставить для нас место, куда можно вернуться в любой момент. Даже если мы сейчас не рядом — здесь всегда есть частичка нас.</p>
-    </div>
-    <div class="cards">
-      <a class="card" href="#places"><div class="card-bg"></div><div class="card-number">01 / PLACES</div><div class="card-title">Наши<br>места</div><div class="card-desc">точки на карте, которые стали нашими</div><span class="card-arrow">→</span></a>
-      <a class="card" href="#message"><div class="card-bg"></div><div class="card-number">02 / WORDS</div><div class="card-title">Тебе<br>от меня</div><div class="card-desc">слова на случай, когда меня нет рядом</div><span class="card-arrow">→</span></a>
-      <a class="card" href="#music"><div class="card-bg"></div><div class="card-number">03 / MUSIC</div><div class="card-title">Наша<br>музыка</div><div class="card-desc">треки, которые напоминают о нас</div><span class="card-arrow">→</span></a>
-      <a class="card" href="#moments"><div class="card-bg"></div><div class="card-number">04 / MEMORY</div><div class="card-title">Наши<br>моменты</div><div class="card-desc">воспоминания, которые хочется беречь</div><span class="card-arrow">→</span></a>
-      <a class="card" href="#always"><div class="card-bg"></div><div class="card-number">05 / ALWAYS</div><div class="card-title">Всегда<br>рядом</div><div class="card-desc">даже если между нами километры</div><span class="card-arrow">→</span></a>
+    <div class="wrap hero__bottom">
+      <p class="hero__signoff">ТЫ ВСЕГДА В МОИХ МЫСЛЯХ <span class="hero__signoff-heart" aria-hidden="true">♡</span></p>
+      <a class="hero__scroll" href="#universe" aria-label="Листать вниз">↓</a>
     </div>
   </section>
 
-  <section class="content message-section" id="message">
-    <div class="section-top">
-      <div><div class="eyebrow">02 / личное сообщение</div><h2>Если вдруг<br>соскучишься.</h2></div>
-      <p>Небольшое напоминание, которое я хочу оставить тебе — на любой день и любое настроение.</p>
-    </div>
-    <div class="message-panel">
-      <div class="message-aside"><div class="script">для тебя,<br>в любое время ♡</div><small>от меня · с любовью</small></div>
-      <div class="message-main"><blockquote id="messageText">«Каждое утро,просыпаясь -<br><span>я,выбираю тебя</span>»</blockquote></div>
+  <!-- ================= 01 / НАША ВСЕЛЕННАЯ ================= -->
+  <section class="section" id="universe">
+    <div class="wrap">
+      <div class="section__head">
+        <div class="section__headline reveal">
+          <p class="eyebrow">01 / наша вселенная</p>
+          <h2>Маленькие вещи.<br>Большие чувства.</h2>
+        </div>
+        <p class="section__lead reveal">Я хотел оставить для нас место, куда можно вернуться в любой момент. Даже если мы сейчас не рядом — здесь всегда есть частичка нас.</p>
+      </div>
+
+      <nav class="cards" aria-label="Разделы нашего места">
+        <a class="card reveal" href="#places">
+          <span class="card__bg card__bg--places" aria-hidden="true"></span>
+          <span class="card__num">01 / PLACES</span>
+          <span class="card__body">
+            <span class="card__title">Наши<br>места</span>
+            <span class="card__desc">точки на карте, которые стали нашими</span>
+          </span>
+          <span class="card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="card reveal" href="#message">
+          <span class="card__bg card__bg--words" aria-hidden="true"></span>
+          <span class="card__num">02 / WORDS</span>
+          <span class="card__body">
+            <span class="card__title">Тебе<br>от меня</span>
+            <span class="card__desc">слова на случай, когда меня нет рядом</span>
+          </span>
+          <span class="card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="card reveal" href="#music">
+          <span class="card__bg card__bg--music" aria-hidden="true"></span>
+          <span class="card__num">03 / MUSIC</span>
+          <span class="card__body">
+            <span class="card__title">Наша<br>музыка</span>
+            <span class="card__desc">треки, которые напоминают о нас</span>
+          </span>
+          <span class="card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="card reveal" href="#moments">
+          <span class="card__bg card__bg--memory" aria-hidden="true"></span>
+          <span class="card__num">04 / MEMORY</span>
+          <span class="card__body">
+            <span class="card__title">Наши<br>моменты</span>
+            <span class="card__desc">воспоминания, которые хочется беречь</span>
+          </span>
+          <span class="card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="card reveal" href="#always">
+          <span class="card__bg card__bg--always" aria-hidden="true"></span>
+          <span class="card__num">05 / ALWAYS</span>
+          <span class="card__body">
+            <span class="card__title">Всегда<br>рядом</span>
+            <span class="card__desc">даже если между нами километры</span>
+          </span>
+          <span class="card__arrow" aria-hidden="true">→</span>
+        </a>
+      </nav>
     </div>
   </section>
 
-  <section class="content" id="places">
-    <div class="section-top"><div><div class="eyebrow">03 / наши места</div><h2>Город хранит<br>наши следы.</h2></div><p>Центр города всегда будет рад нас видеть,также как и я тебя,рядом с собой</p></div>
-    <div class="memory-list">
-      <article class="memory"><b>МЕСТО 01</b><h3>Наша первая прогулка</h3><p>Я шел и смотрел на тебя как на самые яркие звезды на небе</p></article>
-      <article class="memory"><b>МЕСТО 02</b><h3>Где время остановилось</h3><p>Я всегда буду рад сесть с тобой на одну лавочку и не вставать,пока ты того не захочешь</p></article>
-      <article class="memory"><b>МЕСТО 03</b><h3>Куда ещё пойдём</h3><p>Это нам еще предстоит узнать</p></article>
+  <!-- ================= 02 / ЛИЧНОЕ СООБЩЕНИЕ ================= -->
+  <section class="section section--message" id="message">
+    <div class="wrap">
+      <div class="section__head">
+        <div class="section__headline reveal">
+          <p class="eyebrow">02 / личное сообщение</p>
+          <h2>Если вдруг<br>соскучишься.</h2>
+        </div>
+        <p class="section__lead reveal">Небольшое напоминание, которое я хочу оставить тебе — на любой день и любое настроение.</p>
+      </div>
+
+      <div class="message reveal">
+        <div class="message__aside">
+          <p class="message__script">для тебя,<br>в любое время ♡</p>
+          <p class="message__sign">от меня · с любовью</p>
+        </div>
+        <div class="message__main">
+          <blockquote>«Каждое утро, просыпаясь —<br><span>я выбираю тебя»</span></blockquote>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="content" id="music">
-    <div class="section-top"><div><div class="eyebrow">04 / саундтрек</div><h2>У нашей истории<br>есть свой звук.</h2></div></div>
-    <div class="message-panel music-panel">
-      <div class="message-aside music-aside"><div class="script">нажми play <span aria-hidden="true">♫</span></div><small>песня, которая про нас</small></div>
-      <button class="track-trigger" id="trackTrigger" type="button" aria-label="Воспроизвести трек" aria-pressed="false">
-        <span class="track-play" id="trackPlay" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.8c0-.8.9-1.3 1.6-.8l11 7.2a1 1 0 0 1 0 1.6l-11 7.2c-.7.5-1.6 0-1.6-.8z"/></svg></span>
-        <span class="track-title">Трек, который каждый раз<br><span>возвращает к тебе.</span></span>
-      </button>
-      <label class="volume-row" for="volumeSlider">
-        <svg class="volume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
-        <input class="volume-slider" id="volumeSlider" type="range" min="0" max="1" step="0.01" value="0.75" aria-label="Громкость">
-        <span class="volume-value" id="volumeValue">75%</span>
-      </label>
-      <audio id="ourTrack" preload="metadata" src="PHARAOH_-_Odnim_celym_47828832.mp3"></audio>
+  <!-- ================= 03 / НАШИ МЕСТА ================= -->
+  <section class="section" id="places">
+    <div class="wrap">
+      <div class="section__head">
+        <div class="section__headline reveal">
+          <p class="eyebrow">03 / наши места</p>
+          <h2>Город хранит<br>наши следы.</h2>
+        </div>
+        <p class="section__lead reveal">Центр города всегда будет рад нас видеть, так же как и я тебя, рядом с собой.</p>
+      </div>
+
+      <div class="entries">
+        <article class="entry reveal">
+          <p class="entry__num">МЕСТО 01</p>
+          <h3 class="entry__title">Наша первая прогулка</h3>
+          <p class="entry__text">Я шел и смотрел на тебя как на самые яркие звезды на небе.</p>
+        </article>
+        <article class="entry reveal">
+          <p class="entry__num">МЕСТО 02</p>
+          <h3 class="entry__title">Где время остановилось</h3>
+          <p class="entry__text">Я всегда буду рад сесть с тобой на одну лавочку и не вставать, пока ты того не захочешь.</p>
+        </article>
+        <article class="entry reveal">
+          <p class="entry__num">МЕСТО 03</p>
+          <h3 class="entry__title">Куда ещё пойдём</h3>
+          <p class="entry__text">Это нам еще предстоит узнать.</p>
+        </article>
+      </div>
     </div>
   </section>
 
-  <section class="content" id="moments">
-    <div class="section-top"><div><div class="eyebrow">05 / моменты</div><h2>То, что хочется<br>оставить с нами.</h2></div></div>
-    <div class="memory-list">
-      <article class="memory"><b>КАДР 01</b><h3>Твой смех</h3><p>Есть звуки, которые делают даже самый плохой день лучше.</p></article>
-      <article class="memory"><b>КАДР 02</b><h3>Наши вечера</h3><p>Когда не нужно ничего придумывать — просто хорошо рядом.</p></article>
-      <article class="memory"><b>КАДР 03</b><h3>Продолжение следует</h3><p>Самые красивые воспоминания у нас ещё впереди.</p></article>
+  <!-- ================= 04 / САУНДТРЕК ================= -->
+  <section class="section" id="music">
+    <div class="wrap">
+      <div class="section__head">
+        <div class="section__headline reveal">
+          <p class="eyebrow">04 / саундтрек</p>
+          <h2>У нашей истории<br>есть свой звук.</h2>
+        </div>
+        <p class="section__lead reveal">Один трек — и наш вечер снова становится тем самым.</p>
+      </div>
+
+      <div class="player reveal" id="player">
+        <div class="player__head">
+          <p class="player__script">нажми play <span aria-hidden="true">♫</span></p>
+          <p class="player__sign">песня, которая про нас</p>
+        </div>
+
+        <button class="track" id="trackTrigger" type="button" aria-pressed="false" aria-label="Воспроизвести трек">
+          <span class="track__btn" id="trackPlay" aria-hidden="true">
+            <svg class="track__icon track__icon--play" viewBox="0 0 24 24" focusable="false"><path d="M7 4.8c0-.8.9-1.3 1.6-.8l11 7.2a1 1 0 0 1 0 1.6l-11 7.2c-.7.5-1.6 0-1.6-.8z"/></svg>
+            <svg class="track__icon track__icon--pause" viewBox="0 0 24 24" focusable="false"><path d="M6 5h4.5v14H6zM13.5 5H18v14h-4.5z"/></svg>
+          </span>
+          <span class="track__meta">
+            <span class="track__title">Трек, который каждый раз<br><em>возвращает к тебе.</em></span>
+            <span class="track__sub">PHARAOH — Одним целым</span>
+          </span>
+        </button>
+
+        <div class="player__progress">
+          <span class="player__time" id="currentTime">0:00</span>
+          <input class="slider slider--seek" id="seekBar" type="range" min="0" max="100" step="0.1" value="0" aria-label="Перемотка трека">
+          <span class="player__time" id="totalTime">0:00</span>
+        </div>
+
+        <div class="player__volume">
+          <span class="player__volume-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+          </span>
+          <input class="slider slider--volume" id="volumeSlider" type="range" min="0" max="1" step="0.01" value="0.75" aria-label="Громкость">
+          <span class="player__volume-value" id="volumeValue">75%</span>
+        </div>
+
+        <p class="player__status" id="playerStatus" role="status" aria-live="polite"></p>
+        <noscript><p class="player__noscript">Для воспроизведения трека включи JavaScript в браузере.</p></noscript>
+      </div>
+
+      <audio id="ourTrack" preload="metadata" src="assets/audio/odnim-celym.mp3"></audio>
     </div>
   </section>
 
-  <section class="last" id="always">
-    <div class="eyebrow">если ты читаешь это</div>
-    <h2>Я всё ещё выбираю тебя. ♡</h2>
-    <p>Не только в красивые дни и не только когда всё просто. Я хочу разделять с тобой обычные вечера, долгие прогулки, тишину и всё то настоящее, из чего складывается жизнь.</p>
-    <a class="red" href="#top">НАВЕРХ, К НАШИМ ЗВЁЗДАМ ↑</a>
+  <!-- ================= 05 / МОМЕНТЫ ================= -->
+  <section class="section" id="moments">
+    <div class="wrap">
+      <div class="section__head">
+        <div class="section__headline reveal">
+          <p class="eyebrow">05 / моменты</p>
+          <h2>То, что хочется<br>оставить с нами.</h2>
+        </div>
+        <p class="section__lead reveal">Кадры, которые я бы поставил на паузу и смотрел по кругу.</p>
+      </div>
+
+      <div class="strip" aria-hidden="true">
+        <figure class="strip__item reveal"><span class="strip__img strip__img--a"></span></figure>
+        <figure class="strip__item reveal"><span class="strip__img strip__img--b"></span></figure>
+        <figure class="strip__item reveal"><span class="strip__img strip__img--c"></span></figure>
+      </div>
+
+      <div class="entries">
+        <article class="entry reveal">
+          <p class="entry__num">КАДР 01</p>
+          <h3 class="entry__title">Твой смех</h3>
+          <p class="entry__text">Есть звуки, которые делают даже самый плохой день лучше.</p>
+        </article>
+        <article class="entry reveal">
+          <p class="entry__num">КАДР 02</p>
+          <h3 class="entry__title">Наши вечера</h3>
+          <p class="entry__text">Когда не нужно ничего придумывать — просто хорошо рядом.</p>
+        </article>
+        <article class="entry reveal">
+          <p class="entry__num">КАДР 03</p>
+          <h3 class="entry__title">Продолжение следует</h3>
+          <p class="entry__text">Самые красивые воспоминания у нас ещё впереди.</p>
+        </article>
+      </div>
+    </div>
   </section>
+
+  <!-- ================= ФИНАЛ ================= -->
+  <section class="final" id="always">
+    <div class="wrap final__inner">
+      <p class="eyebrow reveal">если ты читаешь это</p>
+      <h2 class="final__title reveal">Я всё ещё выбираю тебя. ♡</h2>
+      <p class="final__text reveal">Не только в красивые дни и не только когда всё просто. Я хочу разделять с тобой обычные вечера, долгие прогулки, тишину и всё то настоящее, из чего складывается жизнь.</p>
+      <a class="btn reveal" href="#top">НАВЕРХ, К НАШИМ ЗВЁЗДАМ ↑</a>
+      <p class="final__hint reveal">Ссылка работает и с NFC-брелка — просто поднеси его к телефону ♡</p>
+    </div>
+  </section>
+
 </main>
-<footer><span>Сделано для тебя, а не для всех</span><span>одним целым · <span id="year"></span> ♡</span></footer>
-</div>
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-const ourTrack = document.getElementById('ourTrack');
-const trackTrigger = document.getElementById('trackTrigger');
-const trackPlay = document.getElementById('trackPlay');
-const musicStatus = document.getElementById('musicStatus');
-const volumeSlider = document.getElementById('volumeSlider');
-const volumeValue = document.getElementById('volumeValue');
-const playIcon = '<svg viewBox="0 0 24 24"><path d="M7 4.8c0-.8.9-1.3 1.6-.8l11 7.2a1 1 0 0 1 0 1.6l-11 7.2c-.7.5-1.6 0-1.6-.8z"/></svg>';
-const pauseIcon = '<svg viewBox="0 0 24 24"><path d="M6 5h4.5v14H6zM13.5 5H18v14h-4.5z"/></svg>';
-ourTrack.volume = Number(volumeSlider.value);
-function updateTrackUI() {
-  const playing = !ourTrack.paused;
-  trackPlay.innerHTML = playing ? pauseIcon : playIcon;
-  trackTrigger.setAttribute('aria-label', playing ? 'Поставить трек на паузу' : 'Воспроизвести трек');
-  trackTrigger.setAttribute('aria-pressed', String(playing));
-  musicStatus.textContent = playing ? 'ПРИОСТАНОВИТЬ МУЗЫКУ' : 'ВКЛЮЧИТЬ МУЗЫКУ';
-}
-function updateVolumeUI() {
-  const value = Math.round(Number(volumeSlider.value) * 100);
-  ourTrack.volume = Number(volumeSlider.value);
-  volumeValue.textContent = value + '%';
-  volumeSlider.style.background = `linear-gradient(to right,var(--red2) 0%,var(--red2) ${value}%,#493235 ${value}%,#493235 100%)`;
-}
-async function toggleTrack() {
-  if (ourTrack.paused) {
-    try { await ourTrack.play(); } catch (error) {
-      trackTrigger.setAttribute('aria-label', 'Не удалось запустить трек. Нажмите, чтобы попробовать снова');
-    }
-  } else {
-    ourTrack.pause();
-  }
-  updateTrackUI();
-}
-trackTrigger.addEventListener('click', toggleTrack);
-volumeSlider.addEventListener('input', updateVolumeUI);
-ourTrack.addEventListener('play', updateTrackUI);
-ourTrack.addEventListener('pause', updateTrackUI);
-ourTrack.addEventListener('ended', updateTrackUI);
-updateVolumeUI();
-document.getElementById('musicBtn').addEventListener('click', () => {
-  document.getElementById('music').scrollIntoView({behavior:'smooth'});
-  toggleTrack();
-});
-</script>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span class="footer__item">Сделано для тебя, а не для всех</span>
+    <span class="footer__item footer__item--center">одним целым · <span id="year">2026</span> ♡</span>
+    <span class="footer__item footer__item--right">наш маленький космос</span>
+  </div>
+</footer>
+
+<nav class="dock" aria-label="Быстрая навигация">
+  <a href="#universe" class="dock__item"><span class="dock__icon" aria-hidden="true">✦</span><span class="dock__label">вселенная</span></a>
+  <a href="#places" class="dock__item"><span class="dock__icon" aria-hidden="true">◈</span><span class="dock__label">места</span></a>
+  <a href="#message" class="dock__item"><span class="dock__icon" aria-hidden="true">♡</span><span class="dock__label">слова</span></a>
+  <a href="#music" class="dock__item"><span class="dock__icon" aria-hidden="true">♫</span><span class="dock__label">музыка</span></a>
+  <a href="#moments" class="dock__item"><span class="dock__icon" aria-hidden="true">◐</span><span class="dock__label">моменты</span></a>
+  <a href="#always" class="dock__item"><span class="dock__icon" aria-hidden="true">∞</span><span class="dock__label">рядом</span></a>
+</nav>
+
+<script src="script.js" defer></script>
 </body>
 </html>
